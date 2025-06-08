@@ -15,6 +15,8 @@ public class PlayerMovement : MonoBehaviour
     public float groundCheckRadius = 0.2f;
     public LayerMask groundLayer;
 
+    public Transform groundCheck; 
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -26,7 +28,7 @@ public class PlayerMovement : MonoBehaviour
         rb.velocity = new Vector2(moveInput * moveSpeed, rb.velocity.y);
 
         // Перевірка чи стоїмо на землі
-        // isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groudLayer);
+        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
 
 
         // Стрибок
