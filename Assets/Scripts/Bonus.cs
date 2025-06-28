@@ -9,9 +9,9 @@ public class Bonus : MonoBehaviour
     private int score = 0;
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.CompareTag("Player")){
+        if(other.gameObject.CompareTag("crystal")){
             score++;
-            Destroy(gameObject);
+            Destroy(other.gameObject);
         }
 
     }
